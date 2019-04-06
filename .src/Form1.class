@@ -1,0 +1,358 @@
+' Gambas class file
+
+Public elecSum As Float
+Public bookSum As Float
+Public grocSum As Float
+Public cartSum As Float
+Public b As Float
+Public deptSum As Float
+Private product As String
+Private lastClicked As Integer
+
+Public Sub ComboBox1_Enter()
+  
+  ComboBox1.Enabled = True
+  ComboBox1.Text = "Electronics"
+  
+End
+
+Public Sub ComboBox1_Leave()
+  
+  ComboBox1.Enabled = False
+  
+End
+
+
+Public Sub ComboBox2_Enter()
+  
+  ComboBox2.Text = "Books"
+  ComboBox2.Enabled = True
+  
+End
+
+Public Sub ComboBox2_Leave()
+  
+  ComboBox2.Enabled = False
+  
+End
+
+
+Public Sub ComboBox3_Enter()
+  
+  ComboBox3.Text = "Groceries"
+  ComboBox3.Enabled = True
+  
+End
+
+Public Sub ComboBox3_Leave()
+  
+  ComboBox3.Enabled = False
+  
+End
+
+Public Sub ComboBox1_Click()
+  lastClicked = 1
+  CheckBox1.Value = False
+  CheckBox2.Value = False
+  CheckBox3.Value = False
+  CheckBox5.Value = False
+  CheckBox6.Value = False
+  CheckBox7.Value = False
+  
+  If ComboBox1.Text = "Mobiles" Then
+    ListView1.Clear
+    ListView1.Add(0, "Redmi Note 7 Pro")
+    CheckBox1.Text = "13999"
+    ListView1.Add(1, "Samsung J7 Prime")
+    CheckBox2.Text = "12000"
+    ListView1.Add(2, "iPhone XR")
+    CheckBox3.Text = "75000"
+    ListView1.Add(3, "Nokia 8.1")
+    CheckBox5.Text = "26000"
+    CheckBox6.Text = "NA"
+    CheckBox7.Text = "NA"
+  Else If ComboBox1.Text = "Accessories" Then
+    ListView1.Clear
+    ListView1.Add(0, "Mini USB Charger")
+    CheckBox1.Text = "400"
+    ListView1.Add(1, "Speakers")
+    CheckBox2.Text = "2999"
+    ListView1.Add(2, "eBook Reader")
+    CheckBox3.Text = "7999"
+    ListView1.Add(3, "Gamepad")
+    CheckBox5.Text = "3999"
+    ListView1.Add(4, "Portable Fan")
+    CheckBox6.Text = "80"
+    CheckBox7.Text = "NA"
+  Else If ComboBox1.Text = "Health Care Products" Then
+    ListView1.Clear
+    ListView1.Add(0, "Hair Styling Kit")
+    CheckBox1.Text = "4999"
+    ListView1.Add(1, "Gent's Trimmer")
+    CheckBox2.Text = "250"
+    ListView1.Add(2, "Instant Glucometer")
+    CheckBox3.Text = "999"
+    ListView1.Add(3, "Men Grooming Kit")
+    CheckBox5.Text = "2599"
+    CheckBox6.Text = "NA"
+    CheckBox7.Text = "NA"
+  Else If ComboBox1.Text = "Laptops" Then
+    ListView1.Clear
+    ListView1.Add(0, "MSI Gaming MSI GL63")
+    CheckBox1.Text = "77990"
+    ListView1.Add(1, "ASUS ROG Strix GL503GE-EN169T")
+    CheckBox2.Text = "86990"
+    ListView1.Add(2, "ASUS ROG Strix Scar II GL504GV-ES019T")
+    CheckBox3.Text = "164990"
+    ListView1.Add(3, "Dell Inspiron 5370")
+    CheckBox5.Text = "62980"
+    ListView1.Add(4, "HP 14Q CS0009TU 2018")
+    CheckBox6.Text = "26340"
+    ListView1.Add(5, "Apple MacBook Air (13-inch)")
+    CheckBox7.Text = "69990"
+  Endif
+
+End
+
+Public Sub ComboBox2_Click()
+  lastClicked = 2
+  CheckBox1.Value = False
+  CheckBox2.Value = False
+  CheckBox3.Value = False
+  CheckBox5.Value = False
+  CheckBox6.Value = False
+  CheckBox7.Value = False
+  
+  If ComboBox2.Text = "Fiction" Then
+    ListView1.Clear
+    ListView1.Add(0, "Sidney Sheldon's The Silent Widow")
+    CheckBox1.Text = "250"
+    ListView1.Add(1, "Divergent Series by Vernica Roth")
+    CheckBox2.Text = "699"
+    ListView1.Add(2, "The House Next Door by James Patterson")
+    CheckBox3.Text = "599"
+    ListView1.Add(3, "The Lowland by Jhumpa Lahiri")
+    CheckBox5.Text = "299"
+    CheckBox6.Text = "NA"
+    CheckBox7.Text = "NA"
+  Else If ComboBox2.Text = "Thriller" Then
+    ListView1.Clear
+    ListView1.Add(0, "Stalker (Joona Linna) by Lars Kepler")
+    CheckBox1.Text = "400"
+    ListView1.Add(1, "And Then There Were None by Agatha Christie")
+    CheckBox2.Text = "299"
+    ListView1.Add(2, "The Girl on the Train by Paula Hawkins")
+    CheckBox3.Text = "239"
+    ListView1.Add(3, "The other Side of Midnight by Sidney Sheldon")
+    CheckBox5.Text = "399"
+    ListView1.Add(4, "Complete Sherlock Holmes (Barnes & Noble Collectible Classics: Omnibus Edition)")
+    CheckBox6.Text = "2499"
+    ListView1.Add(5, "Do Androids Dream Of Electric Sheep?")
+    CheckBox7.Text = "369"
+  Else If ComboBox2.Text = "Horror" Then
+    ListView1.Clear
+    ListView1.Add(0, "Uzumaki (3-in-1, Deluxe Edition): Includes vols. 1, 2 & 3 by Junji Ito")
+    CheckBox1.Text = "1499"
+    ListView1.Add(1, "The Green Room by Nag Mani")
+    CheckBox2.Text = "159"
+    ListView1.Add(2, "The Shining by Steven King")
+    CheckBox3.Text = "319"
+    ListView1.Add(3, "Fragile Things by Neil Gaiman")
+    CheckBox5.Text = "399"
+    ListView1.Add(4, "Hollow City: The Second Novel of Miss Peregrine's Peculiar Children by Ransom Riggs")
+    CheckBox6.Text = "266"
+    CheckBox7.Text = "NA"
+  Else If ComboBox2.Text = "Comics" Then
+    ListView1.Clear
+    ListView1.Add(0, "Tokyo Ghoul - Vol. 1 by Sui Ishida")
+    CheckBox1.Text = "675"
+    ListView1.Add(1, "Akira 35th Anniversary Box Set by Katsuhiro Otomo")
+    CheckBox2.Text = "6999"
+    ListView1.Add(2, "Dororo by Osamu Tezuka")
+    CheckBox3.Text = "1899"
+    ListView1.Add(3, "Batman: Killing Joke (Deluxe) by Alan Moore")
+    CheckBox5.Text = "499"
+    ListView1.Add(4, "Your Name., Vol. 1 by Makoto Shinkai")
+    CheckBox6.Text = "899"
+    ListView1.Add(5, "Satoshi Kon's: Opus")
+    CheckBox7.Text = "1199"
+  Endif
+
+End
+
+Public Sub ComboBox3_Click()
+  lastClicked = 3
+  CheckBox1.Value = False
+  CheckBox2.Value = False
+  CheckBox3.Value = False
+  CheckBox5.Value = False
+  CheckBox6.Value = False
+  CheckBox7.Value = False
+  
+  If ComboBox3.Text = "Edible Oil" Then
+    ListView1.Clear
+    ListView1.Add(0, "Mahakosh Kacchi Ghani Mustard Oil Plastic Bottle  (1 L)")
+    CheckBox1.Text = "130"
+    ListView1.Add(1, "Oleev Health, Cooking Oil")
+    CheckBox2.Text = "825"
+    ListView1.Add(2, "Saffola Gold, Pro Healthy Lifestyle Edible Oil (5 L)")
+    CheckBox3.Text = "649"
+    ListView1.Add(3, "Sundrop Oil, Lite 5L")
+    CheckBox5.Text = "560"
+    CheckBox6.Text = "NA"
+    CheckBox7.Text = "NA"
+  Else If ComboBox3.Text = "Sugar and Sweeteners" Then
+    ListView1.Clear
+    ListView1.Add(0, "Sugar Free Natura Pellets - 500 Pellets")
+    CheckBox1.Text = "285"
+    ListView1.Add(1, "Xlear, XyloSweet, All Natural Xylitol Sweetener, 1 lb (454 g)")
+    CheckBox2.Text = "1195"
+    ListView1.Add(2, "Splenda No Calorie Sweetener - 500 Tablets")
+    CheckBox3.Text = "779"
+    ListView1.Add(3, "Vedaka Popular Sugar, 1kg")
+    CheckBox5.Text = "60"
+    ListView1.Add(4, "Madhur Pure Sugar, 5kg Bag")
+    CheckBox6.Text = "295"
+    ListView1.Add(5, "Tata Salt, 1kg")
+    CheckBox7.Text = "19"
+  Else If ComboBox3.Text = "Rice and Pulses" Then
+    ListView1.Clear
+    ListView1.Add(0, "Vedaka Popular Toor Dal, 1kg ")
+    CheckBox1.Text = "120"
+    ListView1.Add(1, "Vedaka Popular Red Masoor Dal Split, 1 kg ")
+    CheckBox2.Text = "90"
+    ListView1.Add(2, "Vedaka Popular Chana Dal, 500g")
+    CheckBox3.Text = "60"
+    ListView1.Add(3, "Tata Sampann Moong Chilka, 500g")
+    CheckBox5.Text = "63"
+    ListView1.Add(4, "Tata Sampann Pulses Toor Dal, 1kg")
+    CheckBox6.Text = "125"
+    ListView1.Add(5, "Vedaka Popular Green Moong Whole/Sabut, 500g")
+    CheckBox7.Text = "41"
+  Else If ComboBox3.Text = "Spices" Then
+    ListView1.Clear
+    ListView1.Add(0, "Ciba Taaza Spices Boiled Egg Masala Powder Sprinkler (100 g)")
+    CheckBox1.Text = "90"
+    ListView1.Add(1, "Ciba Taaza Spices Raita Masala Powder, 100 g")
+    CheckBox2.Text = "52"
+    ListView1.Add(2, "Urban Platter Cajun Spice Seasoning, 150g")
+    CheckBox3.Text = "325"
+    ListView1.Add(3, "Tata Sampann Coriander Powder Masala, 100g")
+    CheckBox5.Text = "35"
+    ListView1.Add(4, "Agro Fresh Small Mustard, 100g")
+    CheckBox6.text = "20"
+    ListView1.Add(5, "Patanjali Red Chilli Powder, 200g")
+    CheckBox7.Text = "50"
+  Endif
+
+End
+
+Public Sub Form_Open()
+  lastClicked = 0
+  ComboBox1.Enabled = False
+  ComboBox2.Enabled = False
+  ComboBox3.Enabled = False
+  b = 0
+  deptSum = 0
+  cartSum = 0
+  elecSum = 0
+  bookSum = 0
+  grocSum = 0
+
+End
+
+Public Sub Button1_Click()
+  b = 0
+  If CheckBox1.Value == -1 Then
+    If CheckBox1.Text == "NA" Then
+      b = b + 0
+    Else
+      b = b + Val(CheckBox1.Text)
+    Endif
+  Endif
+  If CheckBox2.Value == -1 Then
+    If CheckBox2.Text == "NA" Then
+      b = b + 0
+    Else
+      b = b + Val(CheckBox2.Text)
+    Endif
+  Endif
+  If CheckBox3.Value == -1 Then
+    If CheckBox3.Text == "NA" Then
+      b = b + 0
+    Else
+      b = b + Val(CheckBox3.Text)
+    Endif
+  Endif
+  If CheckBox5.Value == -1 Then
+    If CheckBox5.Text == "NA" Then
+      b = b + 0
+    Else
+      b = b + Val(CheckBox5.Text)
+    Endif
+  Endif
+  If CheckBox6.Value == -1 Then
+    If CheckBox6.Text == "NA" Then
+      b = b + 0
+    Else
+      b = b + Val(CheckBox6.Text)
+    Endif
+  Endif
+  If CheckBox7.Value == -1 Then
+    If CheckBox7.Text == "NA" Then
+      b = b + 0
+    Else
+      b = b + Val(CheckBox7.Text)
+    Endif
+  Endif
+  
+  If lastClicked = 1 Then
+        elecSum = b
+  Else If lastClicked = 2 Then
+        bookSum = b
+  Else If lastClicked = 3 Then
+        grocSum = b
+  Endif
+  
+  TextBox1.Text = Int(b)
+  Label1.Text = "Electronics Total: Rs " & elecSum
+  Label2.Text = "Books Total: Rs " & bookSum
+  Label3.Text = "Groceries Total: Rs " & grocSum
+  
+End
+
+Public Sub Button2_Click()
+
+  Form2.Show()
+
+End
+
+Public Sub Button3_Click()
+
+  Quit
+
+End
+
+Public Sub Button4_Click()
+
+  b = b - elecSum
+  elecSum = 0
+  Label1.Text = "Electronics Total: Rs 0"
+
+End
+
+Public Sub Button5_Click()
+
+  b = b - bookSum
+  bookSum = 0
+  Label2.Text = "Books Total: Rs 0"
+
+End
+
+Public Sub Button6_Click()
+
+  b = b - grocSum
+  grocSum = 0
+  Label3.Text = "Groceries Total: Rs 0"
+
+End

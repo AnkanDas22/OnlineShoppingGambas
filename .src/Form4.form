@@ -1,0 +1,18 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,64)
+  { Label1 Label
+    MoveScaled(16,17,33,10)
+    Font = Font["Bold,+5"]
+    Text = ("Purchase Confirmed!")
+  }
+  { Spinner1 Spinner
+    MoveScaled(28,29,7,5)
+  }
+  { Timer1 #Timer
+    #MoveScaled(29,40)
+    Enabled = True
+    Delay = 2000
+  }
+}

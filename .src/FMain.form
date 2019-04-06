@@ -1,0 +1,23 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,80,91)
+  { PictureBox1 PictureBox
+    MoveScaled(-1,0,81,92)
+    Background = Color.LightGray
+  }
+  { Spinner1 Spinner
+    MoveScaled(35,47,13,12)
+  }
+  { Label1 Label
+    MoveScaled(23,35,38,11)
+    Font = Font["Serif,Bold,+10"]
+    Foreground = Color.TextForeground
+    Text = ("R&A Store")
+    Alignment = Align.Center
+  }
+  { Timer1 #Timer
+    #MoveScaled(39,65)
+    Enabled = True
+  }
+}

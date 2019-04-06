@@ -1,0 +1,17 @@
+' Gambas class file
+
+
+Public Sub Button1_Click()
+
+  If TextBox1.Text = "ankan" Then
+    If TextBox2.Text = "12345" Then
+      Form1.Show()
+      Form3.Close()
+    Else
+      Message.Warning("Invalid Login Password!")
+    Endif
+  Else
+    Message.Warning("Invalid Login Username!")
+  Endif
+
+End

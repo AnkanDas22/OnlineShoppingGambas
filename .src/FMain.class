@@ -1,0 +1,32 @@
+' Gambas class file
+
+  Private a As Integer
+
+Public Sub PictureBox1_MouseDown()
+
+  
+
+End
+
+Public Sub Timer1_Timer()
+
+  a = a + 1
+  If a >= 1 Then
+    Form3.Show()
+    FMain.Close()
+    Timer1.Enabled = False
+  Endif
+
+End
+
+Public Sub Form_Open()
+
+  a = 0
+
+End
+
+Public Sub Spinner1_MouseDown()
+
+  
+
+End

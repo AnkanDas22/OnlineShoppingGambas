@@ -1,0 +1,19 @@
+' Gambas class file
+
+
+Public Sub Form_Open()
+  Dim totalsum As Integer
+  totalsum = Form1.elecSum + Form1.bookSum + Form1.grocSum
+  Label1.Text = "Electronics Total: Rs " & Form1.elecSum
+  Label2.Text = "Books Total: Rs " & Form1.bookSum
+  Label3.Text = "Groceries Total: Rs " & Form1.grocSum
+  Label4.Text = "Total (Without GST): Rs " & totalsum
+  Label5.Text = "Total (With GST): Rs " & (totalsum + (totalsum * 18 / 100))
+
+End
+
+Public Sub Button1_Click()
+  Form4.Show()
+  Form2.Close()
+
+End

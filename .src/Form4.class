@@ -1,0 +1,10 @@
+' Gambas class file
+
+
+Public Sub Timer1_Timer()
+
+  FMain.Show()
+  Form1.Close()
+  Form4.Close()
+
+End

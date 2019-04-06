@@ -1,0 +1,31 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,64)
+  { Label1 Label
+    MoveScaled(5,10,29,4)
+    Text = ("Electronics Total: Rs 0")
+  }
+  { Label2 Label
+    MoveScaled(5,15,29,4)
+    Text = ("Books Total: Rs 0")
+  }
+  { Label3 Label
+    MoveScaled(5,20,29,4)
+    Text = ("Groceries Total: Rs 0")
+  }
+  { Button1 Button
+    MoveScaled(5,42,19,8)
+    Text = ("Confirm Purchase")
+  }
+  { Label4 Label
+    MoveScaled(5,27,40,5)
+    Font = Font["+1"]
+    Text = ("Total (Without GST): Rs 0")
+  }
+  { Label5 Label
+    MoveScaled(5,34,38,5)
+    Font = Font["Bold,+2"]
+    Text = ("Total (With GST): Rs 0")
+  }
+}

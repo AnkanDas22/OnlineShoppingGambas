@@ -1,0 +1,29 @@
+# Gambas Form File 3.0
+
+{ Form Form
+  MoveScaled(0,0,64,64)
+  { Label1 Label
+    MoveScaled(6,12,17,7)
+    Font = Font["+3"]
+    Text = ("Sign In")
+  }
+  { Label2 Label
+    MoveScaled(6,22,10,3)
+    Text = ("Username:")
+  }
+  { Label3 Label
+    MoveScaled(6,29,10,3)
+    Text = ("Password:")
+  }
+  { TextBox1 TextBox
+    MoveScaled(17,22,27,4)
+  }
+  { TextBox2 TextBox
+    MoveScaled(17,29,27,4)
+    Password = True
+  }
+  { Button1 Button
+    MoveScaled(6,37,18,8)
+    Text = ("Login")
+  }
+}
